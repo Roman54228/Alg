@@ -1,0 +1,10 @@
+def preorderTraversal(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
+        elif not root.left and not root.right:
+            return [root.val]
+        
+        l = self.preorderTraversal(root.left)
+        r = self.preorderTraversal(root.right)
+        
+        return [root.val] + l + r #change order of terms for InOrder PostOrder
